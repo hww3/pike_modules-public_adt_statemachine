@@ -1,7 +1,7 @@
 //! A module implimenting state machines and other automata.
 
 //!
-constant __version = "1.1";
+constant __version = "1.2";
 constant __author  = "Bill Welliver <bill@welliver.org>";
 
 //! A simple deterministic finite state machine (FSM)
