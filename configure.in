@@ -1,0 +1,8 @@
+# $Id: configure.in,v 1.1.1.1 2004-09-01 15:12:44 hww3 Exp $
+AC_INIT(module.pmod.in/module.pmod)
+
+AC_MODULE_INIT()
+
+AC_OUTPUT(Makefile)
+
+
