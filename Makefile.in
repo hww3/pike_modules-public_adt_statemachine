@@ -4,7 +4,6 @@ VPATH=@srcdir@:
 OBJS=
 MODDIR=Public.pmod/ADT.pmod/
 MODNAME=StateMachine
-MODULE_PMOD_IN=module.pmod.in
 MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
 
 CONFIG_HEADERS=@CONFIG_HEADERS@
