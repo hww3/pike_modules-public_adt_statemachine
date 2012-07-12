@@ -1,7 +1,7 @@
 //! A module implementing state machines and other automata.
 
 //!
-constant __version = "1.4";
+constant __version = "1.5";
 
 //!
 constant __author  = "Bill Welliver <bill@welliver.org>";

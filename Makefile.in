@@ -2,6 +2,7 @@
 @make_variables@
 VPATH=@srcdir@:
 OBJS=
+MODULE_PMOD_IN=module.pmod.in
 MODDIR=Public.pmod/ADT.pmod/
 AUTODOC_SRC_IN=
 MODNAME=StateMachine
