@@ -1,20 +1,20 @@
 //! A module implimenting state machines and other automata.
 
 //!
-constant __version = "1.2";
+constant __version = "1.4";
 constant __author  = "Bill Welliver <bill@welliver.org>";
 
 //! A simple deterministic finite state machine (FSM)
 class StateMachine {
 
-private mapping deterministic_transitions=([]);
-private mapping transitions=([]);
+protected mapping deterministic_transitions=([]);
+protected mapping transitions=([]);
 
-private string default_new_state;
-private function default_action;
+protected string default_new_state;
+protected function default_action;
 
-private string current_state;
-private string begin_state;
+protected string current_state;
+protected string begin_state;
 
 //! create a new Finite State Machine with the initial state _begin_state.
 void create(string _begin_state)
@@ -56,8 +56,6 @@ void set_transition(string symbol, string state,
     deterministic_transitions[state]=([]);
 
   deterministic_transitions[state][symbol]=({action, new_state});
-
-
 }
 
 //! set a transition available from any state 
@@ -73,9 +71,7 @@ void set_transition(string symbol, string state,
 void set_transition_any(string symbol, function|void action, string 
 new_state)
 {
-
   deterministic_transitions[symbol]=({action, new_state});
-
 }
 
 //! get a transition for a given state transition
