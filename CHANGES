@@ -1,0 +1,7 @@
+Changes since version 1.3
+
+- Made some internal fields protected rather than private, for ease of
+  subclassing
+
+- Split classes into multiple files, for ease of enhancement.
+

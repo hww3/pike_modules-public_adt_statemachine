@@ -1,12 +1,29 @@
-# $Id: Makefile.in,v 1.1.1.1 2004-09-01 15:12:44 hww3 Exp $
+# Id: Makefile.in
 @make_variables@
 VPATH=@srcdir@:
 OBJS=
 MODDIR=Public.pmod/ADT.pmod/
+AUTODOC_SRC_IN=
 MODNAME=StateMachine
+MODULE_NAME=Public.ADT.StateMachine
 MODULE_LDFLAGS=@LDFLAGS@ @LIBS@
+MODULE_DIR_NAME=Public_ADT_StateMachine
+MODULE_LICENSE=3-clause-BSD
 
 CONFIG_HEADERS=@CONFIG_HEADERS@
 
 @dynamic_module_makefile@
 @dependencies@
+
+
+release: verify
+	hg tag -r tip RELEASE_1.${MIN}
+	hg push
+	hg archive -r RELEASE_1.${MIN} ${MODULE_DIR_NAME}-1.${MIN}
+	cd ${MODULE_DIR_NAME}-1.${MIN} && \
+	pike -x module --autoheader && pike -x module --autoconf && \
+	rm -rf autom4*
+	tar cvf ${MODULE_DIR_NAME}-1.${MIN}.tar ${MODULE_DIR_NAME}-1.${MIN}
+	gzip ${MODULE_DIR_NAME}-1.${MIN}.tar
+	rm -rf ${MODULE_DIR_NAME}-1.${MIN}
+	pike upload_module_version.pike ${MODULE_NAME} 1.${MIN} "${MODULE_LICENSE}"

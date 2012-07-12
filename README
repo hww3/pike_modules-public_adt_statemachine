@@ -1,0 +1,4 @@
+
+A simple Finite State Machine (FSM). May be used as-is or subclassed to 
+provide enhanced functionality (such as transition conditions and 
+actions).
